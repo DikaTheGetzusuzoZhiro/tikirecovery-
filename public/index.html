@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16a34a">
+  <title>TIKI Recovery • Roblox Service</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- Notifikasi TikTok saat pertama kali masuk -->
+  <div id="followModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="followTitle">
+    <div class="follow-modal">
+      <button id="closeFollow" class="modal-close" aria-label="Tutup">×</button>
+      <div class="tiktok-mark">♪</div>
+      <span class="eyebrow">TIKI STORE</span>
+      <h2 id="followTitle">Follow TikTok TIKI Store</h2>
+      <p>Ikuti <b>@tamastorebna</b> untuk mendapatkan info layanan dan update terbaru.</p>
+      <div class="follow-actions">
+        <a class="btn primary" href="https://www.tiktok.com/@tamastorebna" target="_blank" rel="noopener">Follow Sekarang</a>
+        <button id="laterFollow" class="btn ghost" type="button">Nanti Saja</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#home"><span class="brand-dot"></span>TIKI <b>Recovery</b></a>
+    <nav>
+      <a href="#recovery">Recovery</a>
+    </nav>
+    <a class="wa-mini" href="https://wa.me/62895391845923" target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">TIKI • ROBLOX SERVICE</span>
+        <h1>Solusi bantuan recovery akun Roblox.</h1>
+        <p>Cari profil Roblox menggunakan username, lihat status akun, lalu ajukan bantuan recovery melalui WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#recovery">Cari Username Roblox</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="/media/robux.png" alt="Banner TIKI Store Roblox">
+      </div>
+    </section>
+
+
+    <section class="stats-section" aria-label="Statistik layanan">
+      <div class="stat-card">
+        <div class="stat-icon">♟</div>
+        <div>
+          <strong>5.000+</strong>
+          <span>Pengunjung</span>
+          <small>Telah mengunjungi website</small>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">▣</div>
+        <div>
+          <strong>1.873</strong>
+          <span>Pesanan</span>
+          <small>Berhasil diproses</small>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">◷</div>
+        <div>
+          <strong>24/7</strong>
+          <span>Layanan</span>
+          <small>Siap membantu</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recovery">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">ACCOUNT RECOVERY</span>
+          <h2>Find My Roblox Username</h2>
+          <p>Masukkan username Roblox untuk melihat profil publik dan status online.</p>
+        </div>
+      </div>
+
+      <div class="lookup-card">
+        <form id="lookupForm" class="lookup-form">
+          <div class="input-wrap">
+            <span>@</span>
+            <input id="usernameInput" name="username" autocomplete="off" placeholder="Username Roblox" maxlength="20" required>
+          </div>
+          <button class="btn primary" type="submit">Find Account</button>
+        </form>
+
+        <div id="lookupLoading" class="loading hidden">
+          <div class="spinner"></div>
+          <div><b>Mencari profil...</b><small>Mengambil data username, avatar, dan status akun.</small></div>
+        </div>
+
+        <div id="lookupError" class="error hidden"></div>
+
+        <article id="profileCard" class="profile hidden">
+          <div class="profile-main">
+            <img id="avatar" class="avatar" alt="Avatar Roblox">
+            <div>
+              <div class="profile-title"><span id="displayName">-</span><span id="presenceBadge" class="status offline">Offline</span></div>
+              <div id="usernameText" class="muted">@username</div>
+              <div class="profile-id">User ID: <span id="userId">-</span></div>
+            </div>
+          </div>
+          <div class="profile-grid">
+            <div><span>Status</span><b id="statusText">Offline</b></div>
+            <div><span>Akun</span><b id="banText">Normal</b></div>
+            <div><span>Dibuat</span><b id="createdText">-</b></div>
+          </div>
+          <div class="profile-actions">
+            <button id="recoverBtn" class="btn primary" type="button">Recover This Account</button>
+          </div>
+        </article>
+
+        <div id="recoveryForm" class="recovery-form hidden">
+          <h3>Ajukan bantuan recovery</h3>
+          <p class="muted">Isi informasi umum yang membantu proses bantuan.</p>
+          <div class="form-grid">
+            <label>Username<input id="recoveryUsername" readonly></label>
+            <label>Masalah<select id="problem">
+              <option>Akun diretas</option>
+              <option>Lupa password</option>
+              <option>Email/nomor tidak bisa diakses</option>
+              <option>Tidak bisa login</option>
+              <option>Akun terkena moderasi/ban</option>
+            </select></label>
+          </div>
+          <label>Kronologi<textarea id="story" rows="4" placeholder="Ceritakan masalah akun secara singkat..."></textarea></label>
+          <button id="sendRecovery" class="btn wa-btn" type="button">Lanjutkan via WhatsApp</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>TIKI Recovery</b><span>Roblox Recovery Service</span></div>
+    <a href="https://wa.me/62895391845923" target="_blank" rel="noopener">WhatsApp 0895391845923</a>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
