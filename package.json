@@ -1,0 +1,11 @@
+{
+  "name": "tiki-recovery",
+  "version": "5.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
+  }
+}
